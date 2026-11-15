@@ -302,7 +302,7 @@ class Handler(BaseHTTPRequestHandler):
         except ApiError as e:
             self.send_json(e.code, {"error": e.msg})
         except Exception as e:  # pragma: no cover
-            self.send_json(500, {"error": "Str(e)"})
+            self.send_json(500, {"error": "Server error"})
             print("ERROR", repr(e))
 
     def serve_page(self, path):
